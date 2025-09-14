@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
      });
 
 
-    // Mobile menu toggle (if you want to add mobile navigation)
+    // Mobile menu toggle
     function createMobileMenu() {
         const header = document.querySelector('.header .container');
         const navMenu = document.querySelector('.nav-menu');
@@ -200,22 +200,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 const mobileBtn = document.createElement('button');
                 mobileBtn.className = 'mobile-menu-btn';
                 mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                mobileBtn.style.cssText = `
-                    background: none;
-                    border: none;
-                    color: white;
-                    font-size: 1.5rem;
-                    cursor: pointer;
-                    display: block;
-                `;
                 
                 header.appendChild(mobileBtn);
                 
                 // Toggle mobile menu
                 mobileBtn.addEventListener('click', function() {
-                    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+                    navMenu.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                });
+                
+                // Close menu when clicking on nav links
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        const icon = mobileBtn.querySelector('i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    });
                 });
             }
+        } else {
+            // Remove mobile menu button on desktop
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            if (mobileBtn) {
+                mobileBtn.remove();
+            }
+            navMenu.classList.remove('active');
         }
     }
 
