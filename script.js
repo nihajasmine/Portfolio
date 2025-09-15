@@ -38,16 +38,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const testimonials = [
         {
-            quote: "Working with Moskur was an absolute pleasure. Their attention to detail and commitment to delivering exceptional web solutions is truly commendable.",
-            author: "Faysal Khan, CEO of Web Page Design"
+            quote: "iii",
+            author: "iii"
         },
         {
-            quote: "Moskur's technical expertise and creative vision helped us achieve our goals. Highly recommended for any web development project.",
-            author: "Sarah Johnson, Project Manager at TechCorp"
+            quote: "M",
+            author: "S"
         },
         {
-            quote: "The quality of work delivered by Moskur exceeded our expectations. Professional, reliable, and innovative approach.",
-            author: "Michael Chen, Founder of StartupXYZ"
+            quote: "ii.",
+            author: "jjj"
         }
     ];
 
@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
          downloadBtn.addEventListener('click', function() {
              // Create a link element to download the resume
              const link = document.createElement('a');
-             link.href = 'Niha_resume.pdf';
-             link.download = 'Niha_resume.pdf';
+             link.href = 'Resume.pdf';
+             link.download = 'Resume.pdf';
              document.body.appendChild(link);
              link.click();
              document.body.removeChild(link);
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
              if(iClass.includes('envelope')) {
                  e.preventDefault();
                  // Try multiple methods to ensure mailto works
-                 const mailtoLink = 'mailto:sknihajasmine@gmail.com?subject=Portfolio Contact&body=Hello Niha,';
+                 const mailtoLink = 'mailto:user@gmail.com?subject=Portfolio Contact&body=Hello,';
                  window.open(mailtoLink, '_self');
              }
              // LinkedIn and GitHub links work directly from HTML
